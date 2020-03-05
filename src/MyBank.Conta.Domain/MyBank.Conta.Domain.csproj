@@ -8,4 +8,8 @@
     <Folder Include="Events\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MyBank.Core\MyBank.Core.csproj" />
+  </ItemGroup>
+
 </Project>

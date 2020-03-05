@@ -1,6 +1,6 @@
-﻿using System;
+﻿using MyBank.Core.Messages;
+using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace MyBank.Core.DomainObjects
 {
@@ -16,6 +16,21 @@ namespace MyBank.Core.DomainObjects
             Id = Guid.NewGuid();
         }
 
+        public void AdicionarEvento(Event evento)
+        {
+            _notificacoes = _notificacoes ?? new List<Event>();
+            _notificacoes.Add(evento);
+        }
+
+        public void RemoverEvento(Event eventItem)
+        {
+            _notificacoes?.Remove(eventItem);
+        }
+
+        public void LimparEventos()
+        {
+            _notificacoes?.Clear();
+        }
 
     }
 }
